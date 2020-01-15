@@ -1,0 +1,13 @@
+Challenge yourselfSection
+Earlier in this article, we showed you how to create a page for the current user listing the books that they have borrowed. The challenge now is to create a similar page that is only visible for librarians, that displays all books that have been borrowed, and which includes the name of each borrower.
+
+You should be able to follow the same pattern as for the other view. The main difference is that you'll need to restrict the view to only librarians. You could do this based on whether the user is a staff member (function decorator: staff_member_required, template variable: user.is_staff) but we recommend that you instead use the can_mark_returned permission and PermissionRequiredMixin, as described in the previous section.
+
+Important: Remember not to use your superuser for permissions based testing (permission checks always return true for superusers, even if a permission has not yet been defined!). Instead, create a librarian user, and add the required capability.
+
+
+
+
+Notes: 
+I added the path to the base-generic template as 'renew-book-librarian'. Not sure if this is right (I based it off of catalog/urls.py). May need to be changed.
+

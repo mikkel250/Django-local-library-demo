@@ -1,0 +1,19 @@
+{% extends "base_generic.html" %}
+{% load static %}
+{% block title %}<title>Django Demo Site</title>{% endblock %}
+{% block content %}
+<h1>Local Libary Home</h1>
+<p>Welcome to the Local Library, a website developed by <a href="https://amazecode.com" target="_blank"><em>Mikkel Ridley.</em></a></p>
+<img class="img-fluid" src="{% static "susan-yin-647448-unsplash.jpg" %}" alt="Photo by Susan Yin on Unsplash">
+<h2>Dynamic Content</h2>
+<p>The library has the following record counts:</p>
+<ul>
+    <li><strong>Books: </strong>{{ num_books }}</li>
+    <li><strong>Copies: </strong>{{ num_instances }}</li>
+    <li><strong>Copies Available: </strong>{{ num_instances_available }}</li>
+    <li><strong>Authors: </strong>{{ num_authors }}</li>
+    <li><strong>Genres: </strong>{{ num_genres }}</li>
+    <li><strong>Books with title containing word "the": </strong>{{ num_titles_containing_the }}</li>
+</ul>
+<p>You have visited this page {{num_visits}}{% if num_visits == 1 %} time{% else %} times{% endif %}.</p>
+{% endblock %}
